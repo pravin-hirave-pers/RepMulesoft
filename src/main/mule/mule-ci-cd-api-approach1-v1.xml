@@ -37,7 +37,7 @@ ns ns0 http://tempuri.org/
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-payload
+{ "Result": payload.body.AddResponse.AddResult}
 ]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
