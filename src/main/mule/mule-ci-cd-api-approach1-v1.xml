@@ -15,8 +15,8 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</wsc:config>
 	<flow name="mule-ci-cd-api-approach1-v1" doc:id="7e940c17-2f1d-4e5b-95fe-aeb561fae017" >
 		<http:listener doc:name="Listener" doc:id="b18101fc-7f29-4cb8-8ef1-a4ae4e5364cc" config-ref="HTTP_Listener_config" path="/app1"/>
-		<set-variable value="#[attributes.queryParams.num1]" doc:name="Set Variable" doc:id="12d88698-d687-4f3f-8461-406fdde23224" variableName="v1"/>
-		<set-variable value="#[attributes.queryParams.num2]" doc:name="Set Variable" doc:id="898dd916-5c2c-4825-a857-becc4be8c11c" variableName="v2"/>
+		<set-variable value="#[attributes.queryParams.num1]" doc:name="Set Variable 1" doc:id="12d88698-d687-4f3f-8461-406fdde23224" variableName="v1"/>
+		<set-variable value="#[attributes.queryParams.num2]" doc:name="Set Variable 2" doc:id="898dd916-5c2c-4825-a857-becc4be8c11c" variableName="v2"/>
 		<ee:transform doc:name="Transform Message" doc:id="e048c943-4c38-423d-a269-1f7fed6fe784" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
@@ -37,7 +37,8 @@ ns ns0 http://tempuri.org/
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-payload]]></ee:set-payload>
+payload
+]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 	</flow>
